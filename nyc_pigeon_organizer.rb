@@ -1,7 +1,5 @@
 def nyc_pigeon_organizer(data)
   pigeon_list = {}
-  #pigeon_list outputs = {"names"{:color["description"], :gender["description"], :lives["locations"]}}
-  #data inputs = {:color{:purple["names"], :grey["names"], :white["names"], :brown["names"]}, :gender{:male["names"], :female["names"]}, :lives{"locations"["names"]}}
   data.each do |info, info_type| #search data hash and for each element that describes information
     info_type.each do |description, description_names| #search each information hash and for each element description of possible element
       description_names.each do |name| #search each description of identifier for each name.
