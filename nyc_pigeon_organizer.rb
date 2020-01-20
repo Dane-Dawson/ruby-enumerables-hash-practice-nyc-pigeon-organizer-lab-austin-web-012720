@@ -5,6 +5,8 @@ def nyc_pigeon_organizer(data)
       description_names.each do |name| 
         if !pigeon_list.key?(name) 
           pigeon_list[name] = {}
+        end
+        
         else 
           new_info_array = [description]
          pigeon_list[name][info.to_s].push new_info_array
