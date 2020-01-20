@@ -8,7 +8,7 @@ def nyc_pigeon_organizer(data)
         if pigeon_list.key?("#{name}") #if pigeon_list hash contains an element matching that name
           #check if current data point exists inside the corresponding array
         else #if not, create a new element in pigeon_list that contains the information according to this names current name, info, and description
-         pidgeon_list["#{name}"][:info] = "#{description}"
+         pigeon_list["#{name}"][:info] = "#{description}"
        end
       end
     end
