@@ -1,18 +1,17 @@
-def nyc_pigeon_organizer(data)
-  pigeon_list = {}
-  data.each do |info, info_type| #search data hash and for each element that describes information
-    info_type.each do |description, description_names| 
-      description_names.each do |name| 
-        if !pigeon_list.key?(name) 
-          pigeon_list[name] = {}
+def nyc_pigeon_organizer(pigeons_in)
+    pigeons_out = {}
+    pigeons_in.each do |attribute_name, attribute_assignments|
+        attribute_assignments.each do |attribute_value, pigeon_names|
+            pigeon_names.each do |pigeon_name|
+                if !pigeons_out.key?(pigeon_name) then
+                    pigeons_out[pigeon_name] = {}
+                end
+                if !pigeons_out[pigeon_name].key?(attribute_name) then
+                    pigeons_out[pigeon_name][attribute_name] = []
+                end
+                pigeons_out[pigeon_name][attribute_name] << attribute_value.to_s
+            end
         end
-        
-        else 
-          new_info_array = [description]
-         pigeon_list[name][info.to_s].push new_info_array
-       end
-      end
     end
-  end
-  pigeon_list
+    return pigeons_out
 end
