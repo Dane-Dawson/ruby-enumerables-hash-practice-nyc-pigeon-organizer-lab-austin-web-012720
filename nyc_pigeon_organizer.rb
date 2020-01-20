@@ -5,8 +5,8 @@ def nyc_pigeon_organizer(data)
   data.keys().each do |info| #search data hash and for each element that describes information
     info.keys().each do |description| #search each information hash and for each element description of possible element
       description.each do |name| #search each description of identifier for each name.
-        if !pigeon_list.key("#{name}") #if pigeon_list hash contains an element matching that name
-          #check if current data point exists inside the corresponding array
+        if !pigeon_list.key?("#{name}") #if pigeon_list hash contains an element matching that name
+          
         else #if not, create a new element in pigeon_list that contains the information according to this names current name, info, and description
          pigeon_list["#{name}"][:info] = "#{description}"
        end
